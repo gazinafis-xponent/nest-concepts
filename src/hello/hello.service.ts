@@ -9,6 +9,6 @@ export class HelloService {
         return `Hello, ${name.toUpperCase()}`;
     };
     plainName(name: string): string{
-        return `Hey, ${name}!`;
+        return `Hi, ${name}!`;
     }
 }
