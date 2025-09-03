@@ -6,6 +6,7 @@ import { HelloModule } from 'src/hello/hello.module';
 @Module({
   controllers: [UserController],
   providers: [UserService],
-  imports: [HelloModule]
+  imports: [HelloModule],
+  exports: [UserService]
 })
 export class UserModule {}

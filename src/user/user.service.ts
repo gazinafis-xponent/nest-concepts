@@ -32,16 +32,21 @@ export class UserService {
 
   getUserById (id: number) {
     const user = this.getAllUsers().find((user) => user?.id === id);
+    console.log(user ? true : false)
+    if(!user){
+        return undefined;
+    }
     return user;
   }
 
-  getWelcome (userId: number){
+  getWelcome (userId: number) {
     const currentUser = this.getUserById(userId);
     if(!currentUser) {
         return "No user to greet!";
     }
     else{
-        return this.helloService.plainName(currentUser?.name);
+        return this.helloService.plainName(currentUser.name);
     }
   }
+
 }

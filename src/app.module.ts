@@ -3,9 +3,18 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HelloModule } from './hello/hello.module';
 import { UserModule } from './user/user.module';
+import { ConfigModule } from '@nestjs/config';
+import { TaskModule } from './task/task.module';
 
 @Module({
-  imports: [HelloModule, UserModule],
+  imports: [
+      ConfigModule.forRoot({
+        isGlobal: true,
+      }),
+      HelloModule,
+      UserModule,
+      TaskModule
+    ],
   controllers: [AppController],
   providers: [AppService],
 })
